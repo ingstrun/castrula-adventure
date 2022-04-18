@@ -4,9 +4,19 @@
   </head>
   <body>
     <br>
-    <img src="pelmeni.png" STYLE="width: 100%; height: auto;">
+    <img id="img" src="long.png" STYLE="width: 400px; height: 400px; object-fit: none; object-position: -400px 0; width: 400px; height: 400px">
+    <P>
+        <DIV id="posx">
+            0
+        </DIV>
     <script>
-        
+      onmousemove = function(e){
+            console.log("mouse location:", e.clientX, e.clientY);
+            el = document.getElementById("posx");
+            el.innerHTML = e.clientX;
+            img = document.getElementById("img");
+            img.style.objectPosition = "-" + e.clientX + "px";
+        }
     </script>
   </body>
 </html>  
