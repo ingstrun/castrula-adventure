@@ -1,7 +1,7 @@
 <html>
   <head>
     <TITLE>Подвал</title>
-      <TITLE>это бета лишь чтобы смотреть как работает на телефоне</title>
+      <TITLE2>это бета лишь чтобы смотреть как работает на телефоне</title2>
   </head>
   <body>
     <br>
@@ -10,14 +10,31 @@
         <DIV id="posx">
             0
         </DIV>
+          <DIV id="sdvig">
+            0
+          </DIV>
     <script>
       onmousemove = function(e){
             console.log("mouse location:", e.clientX, e.clientY);
             el = document.getElementById("posx");
             el.innerHTML = e.clientX;
+
+            console.log("sdvig location:", e.clientX, e.clientY);
+            el = document.getElementById("sdvig");
+            el.innerHTML = (e.clientX/window.innerWidth)*1222;
+
             img = document.getElementById("img");
-            img.style.objectPosition = "-" + e.clientX + "px";
+            img.style.objectPosition = "-" +  (e.clientX/window.innerWidth)*1222 + "px";
+            
+            //ch = document.getElementById("character");
+            //ch.style.left = e.clientX + "px";
+
+            //ch = document.getElementById("character");
+            //ch.style.top = e.clientY + "px";
+            1222
+
         }
-    </script>
+    </script>"
+    <img id="character" src="FLASHLIGHT_LIGHT.png" style="position: fixed; left: 8px; top: 26px">
   </body>
 </html>  
