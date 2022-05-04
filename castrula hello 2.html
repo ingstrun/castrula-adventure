@@ -14,6 +14,17 @@
             0
           </DIV>
     <script>
+      document.onkeypress = function(event){
+        keyName = event.key;
+        if(keyName=="z"){
+          img = document.getElementById("character");
+            img.src = "FLASHLIGHT_LIGHT.png"
+        } else {img = document.getElementById("character");
+            img.src = "flashlight_dark.png"
+          //alert('keypress event\n\n' + 'key: ' + keyName);
+        }
+      };
+
       onmousemove = function(e){
             console.log("mouse location:", e.clientX, e.clientY);
             el = document.getElementById("posx");
