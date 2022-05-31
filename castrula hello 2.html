@@ -10,22 +10,70 @@
         <DIV id="posx">
             0
         </DIV>
+        <DIV id="souppot_run">
+          0
+        </DIV>
+        <DIV id="fork">
+          0
+        </DIV>
           <DIV id="sdvig">
             0
           </DIV>
+          <DIV id="energe">
+            100
+          </DIV>
     <script>
+      //setInterval(myTimer, 1000);
+      var qqz = 0;
+      var fork = 0 
+      function myTimer()
+      {
+        const d = new Date();
+        document.getElementById("demo").innerHTML = d.toLocaleTimeString();
+      }
+      let timerId = setInterval(souppot, 1000);
+      function souppot()
+      {
+        qqz = qqz + 1;
+        
+        if(qqz>0 && qqz<10){
+          souppotpose="camera1_castrula_pose1.png"
+        }
+        if(qqz>10 && qqz<20){
+          souppotpose="camera1_castrula_pose2.png"
+        }
+        if(qqz>20 && qqz<30){
+          souppotpose="camera1_castrula_pose3.png"
+        }
+        document.getElementById("souppot_run").innerHTML = souppotpose;
+      }
+      let timerId1 = setInterval(souppot, 1000);
+      function souppot()
+      {
+       fork = fork + 1
+      }
+          //"camera1_castrula_pose1.png"
+          //"camera1_castrula_pose2.png"
+          //"camera1_castrula_pose3.png"
+
       document.onkeypress = function(event){
         keyName = event.key;
         if(keyName=="z"){
+          document.getElementById("energe").energe
+          fork = 0
           img = document.getElementById("character");
             img.src = flash="FLASHLIGHT_LIGHT.png"
         } else {img = document.getElementById("character");
             img.src = flash="flashlight_dark.png"
           //alert('keypress event\n\n' + 'key: ' + keyName);
         }
+        //potpose
+          //"camera1_castrula_pose1.png"
+          //"camera1_castrula_pose2.png"
+          //"camera1_castrula_pose3.png"
         if(keyName=="c"){
           img = document.getElementById("character");
-            img.src = "camera1_castrula_pose1.png"
+            img.src = souppotpose
         } else {img = document.getElementById("character");
             img.src = flash
           //alert('keypress event\n\n' + 'key: ' + keyName);
@@ -54,5 +102,6 @@
         }
     </script>"
     <img id="character" src="FLASHLIGHT_LIGHT.png" style="position: fixed; left: 8px; top: 26px">
+    <p id="demo">ZZZ</p>
   </body>
 </html>  
