@@ -45,12 +45,23 @@
         if(qqz>20 && qqz<30){
           souppotpose="camera1_castrula_pose3.png"
         }
+        if(qqz>30 && qqz<40){
+          souppotpose="camera1_castrula_pose1.png"
+        }
+        if(qqz>40){
+          img = document.getElementById("character");
+            img.src = "diescreen.png"
+        }
         document.getElementById("souppot_run").innerHTML = souppotpose;
       }
-      let timerId1 = setInterval(souppot, 1000);
-      function forkpot()
+      let timerId1 = setInterval(forkpose, 1000);
+      function forkpose()
       {
        fork = fork + 1;
+       
+       if( fork = 20 ){
+         alert("aaaaa")
+       }
       }
           //"camera1_castrula_pose1.png"
           //"camera1_castrula_pose2.png"
