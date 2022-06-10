@@ -19,22 +19,48 @@
           <DIV id="sdvig">
             0
           </DIV>
-          <DIV id="energe">
-            100
+          <DIV id="time">
+            0
           </DIV>
     <script>
       //setInterval(myTimer, 1000);
       var qqz = 0;
-      var fork = 0 
+      var fork = 0;
+      var camerawork = +1; 
       function myTimer()
       {
         const d = new Date();
         document.getElementById("demo").innerHTML = d.toLocaleTimeString();
       }
+      let timerId2 = setInterval(time, 1000);
+      function time()
+      {
+        t = t + 1;
+
+        if(t>60 && t<120){
+         hour = 1 
+        } 
+        if(t>120 && t<180){
+         hour = 2 
+        } 
+        if(t>180 && t<240){
+         hour = 3 
+        } 
+        if(t>240 && t<300){
+         hour = 4 
+        } 
+        if(t>300 && t<360){
+         hour = 5 
+        }  
+        if(t>360){
+         alert("вы выиграли") 
+        } 
+      }
       let timerId = setInterval(souppot, 1000);
       function souppot()
       {
-        qqz = qqz + 1;
+
+        qqz = qqz + camerawork;
         
         if(qqz>0 && qqz<10){
           souppotpose="camera1_castrula_pose1.png"
@@ -59,8 +85,9 @@
       {
        fork = fork + 1;
        
-       if( fork = 20 ){
-         alert("aaaaa")
+       if( fork == 20 ){
+        img = document.getElementById("character");
+            img.src = "diescreen.png"
        }
       }
           //"camera1_castrula_pose1.png"
@@ -70,23 +97,33 @@
       document.onkeypress = function(event){
         keyName = event.key;
         if(keyName=="z"){
-          document.getElementById("energe").energe
-          fork = 0
+          document.getElementById("fork");
+          fork = 0;
           img = document.getElementById("character");
             img.src = flash="FLASHLIGHT_LIGHT.png"
         } else {img = document.getElementById("character");
             img.src = flash="flashlight_dark.png"
           //alert('keypress event\n\n' + 'key: ' + keyName);
         }
+
+
+       // if(keyName==x){
+         // document.getElementById("souppot_run");
+         // qqz = 0;
+       // }
+
+       
         //potpose
           //"camera1_castrula_pose1.png"
           //"camera1_castrula_pose2.png"
           //"camera1_castrula_pose3.png"
         if(keyName=="c"){
           img = document.getElementById("character");
-            img.src = souppotpose
+            img.src = souppotpose;
+            camerawork = -1;              
         } else {img = document.getElementById("character");
-            img.src = flash
+            img.src = flash;
+            camerawork = +1;
           //alert('keypress event\n\n' + 'key: ' + keyName);
         }
       };
